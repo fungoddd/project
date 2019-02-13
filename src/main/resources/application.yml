@@ -1,0 +1,36 @@
+#端口-上下文
+server:
+  port: 8080
+  context-path: /O2O
+  
+#乱码解决问题
+spring: 
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+
+  #mvc
+    #view:
+      #prefix: /WEB-INF/html/
+      #suffix: .html
+
+
+#mybatis配置sqlSessionFactory
+#mybatis:
+  #mybatis.xml配置文件所在目录
+  #config-location: classpath:mybatis.xml
+  #映射文件所在目录
+  #mapper-locations: com/fun/dao/*Mapper.xml
+  #实体类所在目录
+  #type-aliases-package: com.fun.entity
+
+#自定义logback日志配置
+logging:
+  config: classpath:logback.xml
+  level: debug
+
+
+
+
+

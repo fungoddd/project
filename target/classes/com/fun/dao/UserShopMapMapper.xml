@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.UserShopMapMapper">
+    <resultMap id="userShopResultMap" type="com.fun.entity.UserShopMap">
+        <id column="user_shop_id" property="userShopId"></id>
+        <result column="create_time" property="createTime"></result>
+        <result column="point" property="point"></result>
+        <result column="user_name" property="userName"></result>
+        <result column="usmshop_name" property="shopName"></result>
+        <association property="user" column="user_id" javaType="com.fun.entity.PersonInfo">
+            <id column="user_id" property="userId"></id>
+            <result column="name" property="name"></result>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.fun.entity.Shop">
+            <id column="shop_id" property="shopId"></id>
+            <result column="shop_name" property="shopName"></result>
+        </association>
+    </resultMap>
+    <!--根据查询条件查询顾客和商店积分关系的列表-->
+    <select id="selectUserShopMapList" resultMap="userShopResultMap" parameterType="com.fun.entity.UserShopMap">
+        SELECT
+        usm.user_shop_id,
+        usm.create_time,
+        usm.point,
+        usm.user_name,
+        usm.shop_name AS usmshop_name,
+
+        buy.user_id,
+        buy.name,
+
+        s.shop_id,
+        s.shop_name
+        FROM
+        tb_user_shop_map usm,
+        tb_person_info buy,
+        tb_shop s
+        <where>
+            usm.user_id=buy.user_id
+            AND
+            usm.shop_id=s.shop_id
+            <!--根据顾客id查询-->
+            <if test="user!=null and user.userId!=null">
+                AND usm.user_id=#{user.userId}
+            </if>
+            <!--通过商店id查询-->
+            <if test="shop!=null and shop.shopId!=null">
+                AND usm.shop_id=#{shop.shopId}
+            </if>
+            <!--根据顾客名模糊查询-->
+            <if test="user!=null and user.name!=null">
+                AND buy.name LIKE CONCAT ('%',#{user.name},'%')
+            </if>
+            <!--SQL模糊查询的优化,直接在当前表插入需要信息查询-->
+            <!--<if test="user!=null and user.name!=null">
+                AND usm.user_name LIKE CONCAT ('%',#{user.name},'%')
+            </if>-->
+
+            <!--根据商店名模糊查询-->
+            <if test="shop!=null and shop.shopName!=null">
+                AND s.shop_name LIKE CONCAT ('%',#{shop.shopName},'%')
+            </if>
+            <!--<if test="shop!=null and shop.shopName!=null">
+                AND usm.shop_name LIKE CONCAT ('%',#{shop.shopName},'%')
+            </if>-->
+
+            <!--根据创建时间范围查询-->
+            <if test="createTime!=null">
+                AND usm.create_time >#{createTime}
+            </if>
+        </where>
+    </select>
+    <!--通过顾客id和商店id查询该用户在指定商店的积分信息-->
+    <select id="selectUserShopMapById" resultMap="userShopResultMap" parameterType="integer">
+        SELECT
+        usm.user_shop_id,
+        usm.create_time,
+        usm.point,
+        usm.user_name,
+        usm.shop_name AS usmshop_name,
+
+        buy.user_id,
+        buy.name,
+
+        s.shop_id,
+        s.shop_name
+        FROM
+        tb_user_shop_map usm,
+        tb_person_info buy,
+        tb_shop s
+        WHERE
+        usm.user_id=buy.user_id
+        AND
+        usm.shop_id=s.shop_id
+        AND
+        usm.user_id=#{userId}
+        AND
+        usm.shop_id=#{shopId}
+    </select>
+    <!--新增一条顾客在商店的积分记录-->
+    <insert id="insertUserShopMap" parameterType="com.fun.entity.UserShopMap" useGeneratedKeys="true"
+            keyProperty="user_shop_id">
+      INSERT INTO
+      tb_user_shop_map
+      (
+      user_id,
+      shop_id,
+      create_time,
+      point,
+      user_name,
+      shop_name
+      )
+      VALUES
+      (
+      #{user.userId},
+      #{shop.shopId},
+      #{createTime},
+      #{point},
+      #{user.name},
+      #{shop.shopName}
+      )
+    </insert>
+    <!--更新用户在某商店的积分通过顾客id和商店id-->
+    <update id="updateUserShopMapPoint" parameterType="com.fun.entity.UserShopMap" useGeneratedKeys="true"
+            keyProperty="user_shop_id">
+      UPDATE
+      tb_user_shop_map
+      SET
+      point=#{point}
+      WHERE
+      user_id=#{user.userId}
+      AND
+      shop_id=#{shop.shopId}
+    </update>
+
+</mapper>

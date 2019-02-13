@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.AwardMapper">
+    <!--获取奖品列表,分页显示-->
+    <select id="selectAwardList" resultType="com.fun.entity.Award" parameterType="com.fun.entity.Award">
+        SELECT
+        award_id,
+        award_name,
+        award_desc,
+        award_img,
+        point,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        shop_id
+        FROM tb_award
+        <where>
+            <!--根据奖品名模糊查询-->
+            <if test="awardName!=null">
+                AND award_name LIKE CONCAT ('%',#{awardName},'%')
+            </if>
+            <!--通过商店id查询-->
+            <if test="shopId!=null">
+                AND shop_id=#{shopId}
+            </if>
+            <!--根据可用状态查询-->
+            <if test="enableStatus!=null">
+                AND enable_status=#{enableStatus}
+            </if>
+        </where>
+        ORDER BY
+        priority DESC
+    </select>
+    <!--通过奖品id获取奖品信息-->
+    <select id="selectAwardById" resultType="com.fun.entity.Award" parameterType="Integer">
+        SELECT
+        award_id,
+        award_name,
+        award_desc,
+        award_img,
+        point,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        shop_id
+        FROM tb_award
+        WHERE award_id=#{awardId}
+    </select>
+    <!--添加奖品-->
+    <insert id="insertAward" useGeneratedKeys="true" keyProperty="awardId" keyColumn="award_id"
+            parameterType="com.fun.entity.Award">
+        INSERT INTO
+        tb_award
+        (
+        award_name,
+        award_desc,
+        award_img,
+        point,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        shop_id
+        )
+        VALUES
+        (
+        #{awardName},
+        #{awardDesc},
+        #{awardImg},
+        #{point},
+        #{priority},
+        #{createTime},
+        #{lastEditTime},
+        #{enableStatus},
+        #{shopId}
+        )
+    </insert>
+    <!--通过奖品主键和商店主键删除指定奖品-->
+    <delete id="deleteAward" parameterType="integer">
+        DELETE FROM
+        tb_award
+        WHERE
+        award_id=#{awardId}
+        AND
+        shop_id=#{shopId}
+    </delete>
+    <!--修改奖品信息-->
+    <update id="updateAward" useGeneratedKeys="true" keyColumn="award_id" keyProperty="awardId"
+            parameterType="com.fun.entity.Award">
+        UPDATE tb_award
+        <set>
+            <if test="awardName!=null">award_name=#{awardName},</if>
+            <if test="awardDesc!=null">award_desc=#{awardDesc},</if>
+            <if test="awardImg!=null">award_img=#{awardImg},</if>
+            <if test="point!=null">point=#{point},</if>
+            <if test="priority!=null">priority=#{priority},</if>
+            <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+            <if test="enableStatus!=null">enable_status=#{enableStatus}</if>
+        </set>
+        WHERE award_id=#{awardId}
+        AND shop_id=#{shopId}
+    </update>
+</mapper>

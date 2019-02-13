@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微信二维码登录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+</head>
+<header class="bar bar-nav">
+    <h1 class="title">微信登录入口</h1>
+</header>
+<body>
+<div class="content">
+
+    <div class="content-block">
+        <div class="row">
+
+            <!--二维码图片,图片加载的时候回访问url加载图片-->
+            <div style="text-align: center" class="col-50">
+                <span>商家登录</span>
+                <img id="auth1-img" src="/O2O/wechatLogin/generateQRCode4ShopAdminLogin" alt="" width="40%"/>
+            </div>
+            <div class="col-10"></div>
+
+            <!--二维码图片,图片加载的时候回访问url加载图片-->
+            <div style="text-align: center" class="col-50">
+                <span>用户登录</span>
+                <img id="auth2-img" src="/O2O/wechatLogin/generateQRCode4UserLogin" alt="" width="40%"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

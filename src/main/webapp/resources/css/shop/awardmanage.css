@@ -1,0 +1,23 @@
+.row-award {
+    margin: 0 auto;
+    border: 1px solid #999;
+    padding: .5rem;
+    border-bottom: none;
+}
+
+.row-award:last-child {
+    border-bottom: 1px solid #999;
+}
+
+.award-name {
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.row-award {
+    text-align: center;
+}
+
+.award-wrap a {
+    margin-right: .22rem;
+}

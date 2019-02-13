@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.UserProductMapMapper">
+    <resultMap id="userProductResultMap" type="com.fun.entity.UserProductMap">
+        <id column="user_product_id" property="userProductId"></id>
+        <result column="create_time" property="createTime"></result>
+        <result column="point" property="point"></result>
+        <result column="user_name" property="userName"></result>
+        <result column="upmproduct_name" property="productName"></result>
+        <association property="user" column="user_id" javaType="com.fun.entity.PersonInfo">
+            <id column="user_id" property="userId"></id>
+            <result column="name" property="name"></result>
+        </association>
+        <association property="product" column="product_id" javaType="com.fun.entity.Product">
+            <id column="product_id" property="productId"></id>
+            <result column="product_name" property="productName"></result>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.fun.entity.Shop">
+            <id column="shop_id" property="shopId"></id>
+            <result column="shop_name" property="shopName"></result>
+        </association>
+        <association property="operator" column="operator_id" javaType="com.fun.entity.PersonInfo">
+            <id column="operator_id" property="userId"></id>
+            <result column="operator_name" property="name"></result>
+        </association>
+    </resultMap>
+    <!--根据查询条件,查询用户消费商品映射的列表-->
+    <select id="selectUserProductMapList" resultMap="userProductResultMap"
+            parameterType="com.fun.entity.UserProductMap">
+        SELECT
+        upm.user_product_id,
+        upm.create_time,
+        upm.point,
+        upm.user_name,
+        upm.product_name AS upmproduct_name,
+
+        buy.user_id,
+        buy.name,
+
+        s.shop_id,
+        s.shop_name,
+
+        p.product_id,
+        p.product_name,
+
+        operator.user_id AS operator_id,<!--和上面user_id相同起别名-->
+        operator.name AS operator_name
+        FROM
+        tb_user_product_map upm,
+        tb_person_info buy,
+        tb_shop s,
+        tb_product p,
+        tb_person_info operator
+        <where>
+            upm.user_id=buy.user_id
+            AND
+            upm.shop_id=s.shop_id
+            AND
+            upm.product_id=p.product_id
+            AND
+            upm.operator_id=operator.user_id
+            <!--通过顾客信息查询-->
+            <if test="user!=null and user.userId!=null">
+                AND upm.user_id=#{user.userId}
+            </if>
+            <!--通过商店信息查询-->
+            <if test="shop!=null and shop.shopId!=null">
+                AND upm.shop_id=#{shop.shopId}
+            </if>
+            <!--SQL语句模糊查询优化,添加的时候就把需要的字段插入,模糊查询不在需要查询关联表-->
+            <!--通过顾客名字模糊查询-->
+            <if test="user!=null and user.name!=null">
+                AND buy.name LIKE CONCAT ('%',#{user.name},'%')
+            </if>
+            <!--<if test="user!=null and user.name!=null">
+                AND upm.user_name LIKE CONCAT ('%',#{user.name},'%')
+            </if>-->
+
+            <!--通过商品名字模糊查询-->
+            <if test="product!=null and product.productName!=null">
+                AND p.product_name LIKE CONCAT ('%',#{product.productName},'%')
+            </if>
+            <!--<if test="product!=null and product.productName!=null">
+                AND upm.product_name LIKE CONCAT ('%',#{product.productName},'%')
+            </if>-->
+
+            <!--通过消费日期查询-->
+            <if test="createTime!=null">
+                AND upm.create_time>#{createTime}
+            </if>
+        </where>
+        ORDER BY
+        create_time DESC
+    </select>
+    <!--添加一条顾客购买商品的记录-->
+    <insert id="insertUserProductMap" parameterType="com.fun.entity.UserProductMap" useGeneratedKeys="true"
+            keyProperty="user_product_id">
+        INSERT INTO
+        tb_user_product_map
+        (
+        user_id,
+        product_id,
+        shop_id,
+        operator_id,
+        create_time,
+        point,
+        user_name,
+        product_name
+        )
+        VALUES
+        (
+        #{user.userId},
+        #{product.productId},
+        #{shop.shopId},
+        #{operator.userId},
+        #{createTime},
+        #{point},
+        #{user.name},
+        #{product.productName}
+        )
+    </insert>
+
+
+</mapper>

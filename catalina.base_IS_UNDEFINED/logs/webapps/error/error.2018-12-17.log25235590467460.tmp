@@ -1,0 +1,56 @@
+2018-12-20 00:00:16:451 [schedulerFactory_Worker-3] INFO  com.fun.service.ProductSellDailyService - Quartz Running...
+2018-12-19 00:00:50:710 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7416 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-19 00:00:50:713 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-19 00:00:50:714 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-19 00:00:56:035 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.761 seconds (JVM running for 7.861)
+2018-12-18 23:59:24:624 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 3160 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 23:59:24:630 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 23:59:24:631 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 23:59:31:696 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.665 seconds (JVM running for 11.958)
+2018-12-19 00:00:00:023 [schedulerFactory_Worker-1] INFO  com.fun.service.ProductSellDailyService - Quartz Running...
+2018-12-17 21:19:52:872 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6788 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 21:19:52:877 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 21:19:52:877 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 21:22:43:349 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7628 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 21:22:43:354 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 21:22:43:354 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 21:23:54:495 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7008 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 21:23:54:517 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 21:23:54:518 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 21:24:01:624 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.884 seconds (JVM running for 9.87)
+2018-12-17 21:28:24:687 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7704 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 21:28:24:690 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 21:28:24:691 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 21:28:30:614 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.385 seconds (JVM running for 8.787)
+2018-12-17 21:30:23:070 [http-nio-8080-exec-6] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/3zQWQJoX","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545053422843%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:30:23:098 [http-nio-8080-exec-6] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/3zQWQJoX
+2018-12-17 21:32:20:106 [http-nio-8080-exec-6] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/r2pFvC5s","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545053536813%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:32:20:106 [http-nio-8080-exec-6] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/r2pFvC5s
+2018-12-17 21:34:22:021 [http-nio-8080-exec-10] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/aiQKOgQM","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545053661643%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:34:22:022 [http-nio-8080-exec-10] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/aiQKOgQM
+2018-12-17 21:35:22:202 [http-nio-8080-exec-3] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/eDxN8puv","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545053722053%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:35:22:202 [http-nio-8080-exec-3] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/eDxN8puv
+2018-12-17 21:36:20:559 [http-nio-8080-exec-1] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/ZUGfoVLe","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545053777151%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:36:20:561 [http-nio-8080-exec-1] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/ZUGfoVLe
+2018-12-17 21:51:57:529 [http-nio-8080-exec-9] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/nhQXtuJZ","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545054717387%7D#wechat_redirect","err_msg":""}
+2018-12-17 21:51:57:529 [http-nio-8080-exec-9] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/nhQXtuJZ
+2018-12-17 22:40:44:679 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Starting ProductSellDailyDaoTest on DESKTOP-7KE4FP8 with PID 7784 (started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 22:40:44:679 [main] DEBUG com.fun.dao.ProductSellDailyDaoTest - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 22:40:44:680 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - No active profile set, falling back to default profiles: default
+2018-12-17 22:40:50:802 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Started ProductSellDailyDaoTest in 6.833 seconds (JVM running for 9.576)
+2018-12-17 22:42:16:039 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Starting ProductSellDailyDaoTest on DESKTOP-7KE4FP8 with PID 8308 (started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 22:42:16:040 [main] DEBUG com.fun.dao.ProductSellDailyDaoTest - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 22:42:16:043 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - No active profile set, falling back to default profiles: default
+2018-12-17 22:42:21:526 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Started ProductSellDailyDaoTest in 6.389 seconds (JVM running for 8.364)
+2018-12-17 22:45:15:016 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Starting ProductSellDailyDaoTest on DESKTOP-7KE4FP8 with PID 8660 (started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 22:45:15:017 [main] DEBUG com.fun.dao.ProductSellDailyDaoTest - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 22:45:15:017 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - No active profile set, falling back to default profiles: default
+2018-12-17 22:45:20:861 [main] INFO  com.fun.dao.ProductSellDailyDaoTest - Started ProductSellDailyDaoTest in 6.495 seconds (JVM running for 8.943)
+2018-12-17 23:29:59:391 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 724 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 23:29:59:395 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 23:29:59:395 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 23:30:04:764 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.797 seconds (JVM running for 8.157)
+2018-12-17 23:33:10:939 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8200 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-17 23:33:10:944 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-17 23:33:10:945 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-17 23:33:18:312 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.911 seconds (JVM running for 11.471)

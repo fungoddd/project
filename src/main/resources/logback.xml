@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--60秒扫描一次配置文件是否变化,不输出debug信息-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!--定义参数常量-->
+    <!--TRACE<DEBUG<INFO<WARN<ERROR-->
+    <!--logger.trace("msg") logger.debug...只记录debug级别以上的日志-->
+    <property name="log.level" value="debug"/>
+    <!--日志保存最大的历史数量-->
+    <property name="log.maxHistory" value="30"/>
+    <property name="log.filePath" value="${catalina.base}/logs/webapps"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <!--控制台设置,输入到控制台,其他三个输出到日志文件-->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender>
+    <!--DEBUG,日志信息输出到不同的三个文件中-->
+    <appender name="debugAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--文件路径-->
+        <file>${log.filePath}/debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件名称-->
+            <FileNamePattern>${log.filePath}/debug/debug.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <!--日志文件最大保存历史数量-->
+            <maxHistory>${log.maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <!--过滤掉非DEBUG的信息-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <!-- 如果使用logback 那么此处需要注释 否则出现ERROR 如果使用log4j2 那么此处需要解除注释-->
+            <!--<onMisMatch>DENY</onMisMatch>-->
+        </filter>
+
+    </appender>
+    <!--INFO-->
+    <appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--文件路径-->
+        <file>${log.filePath}/info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件名称-->
+            <FileNamePattern>${log.filePath}/info/info.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <!--日志文件最大保存历史数量-->
+            <maxHistory>${log.maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <!--过滤掉非INFO的信息-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <!--<onMisMatch>DENY</onMisMatch>-->
+        </filter>
+    </appender>
+    <!--ERROR-->
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--文件路径-->
+        <file>${log.filePath}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件名称-->
+            <FileNamePattern>${log.filePath}/error/error.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <!--日志文件最大保存历史数量-->
+            <maxHistory>${log.maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <!--过滤掉非ERROR的信息-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <!--<onMisMatch>DENY</onMisMatch>-->
+        </filter>
+    </appender>                         <!--继承了root里的appender,能在控制台看到信息-->
+    <logger name="com.fun" level="${log.level}" additivity="true">
+        <!--绑定向这三个文件中输出信息-->
+        <appender-ref ref="debugAppender"/>
+        <appender-ref ref="infoAppender"/>
+        <appender-ref ref="errorAppender"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="consoleAppender"/>
+    </root>
+</configuration>

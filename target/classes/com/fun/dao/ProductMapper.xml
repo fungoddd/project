@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.ProductMapper">
+    <!--PageHelper查询商品列表并分页，可输入的条件有：商品名（模糊），商品状态，店铺id，商品类别-->
+    <select id="getProductList" resultType="com.fun.entity.Product">
+        SELECT
+        product_id,
+        product_name,
+        product_desc,
+        img_addr,
+        normal_price,
+        promotion_price,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        point,
+        product_category_id,
+        shop_id
+        FROM
+        tb_product
+        <where>
+            <if test="productCondition.shop!=null and productCondition.shop.shopId!=null">
+                and shop_id = #{productCondition.shop.shopId}
+            </if>
+            <if test="productCondition.productCategory!=null and productCondition.productCategory.productCategoryId!=null">
+                and product_category_id =#{productCondition.productCategory.productCategoryId}
+            </if>
+            <!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是
+                '%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 --><!--'%${productCondition.productName}%'-->
+            <if test="productCondition.productName!=null">
+                and product_name like CONCAT ('%',#{productCondition.productName},'%')
+            </if>
+            <if test="productCondition.enableStatus!=null">
+                and enable_status = #{productCondition.enableStatus}
+            </if>
+        </where>
+        ORDER BY
+        priority
+        DESC
+    </select>
+    <!--通过商品id删除商品-->
+    <delete id="removeProductById" parameterType="Integer">
+        DELETE FROM
+        tb_product
+        WHERE
+        product_id = #{productId} AND shop_id=#{shopId}
+    </delete>
+    <!--删除商品类别之前，将商品信息中的商品类别id置空,否则因为关联外键无法删除-->
+    <update id="updateProductCategoryToNull" parameterType="Integer">
+        UPDATE tb_product
+        SET product_category_id = NULL
+        WHERE product_category_id = #{productCategoryId}
+    </update>
+    <!-- 更改同时传入商品ID和店铺ID，限定了只能操作当前用户的店铺的商品，提高安全性。 -->
+    <update id="updateProduct" parameterType="com.fun.entity.Product" keyProperty="product_id" useGeneratedKeys="true">
+        UPDATE
+        tb_product
+        <set>
+            <if test="productName != null">
+                product_name = #{productName},
+            </if>
+            <if test="productDesc != null">
+                product_desc = #{productDesc},
+            </if>
+            <if test="imgAddr != null">
+                img_addr = #{imgAddr},
+            </if>
+            <if test="normalPrice != null">
+                normal_price = #{normalPrice},
+            </if>
+            <if test="promotionPrice != null">
+                promotion_price = #{promotionPrice},
+            </if>
+            <if test="point != null">
+                point = #{point},
+            </if>
+            <if test="priority != null">
+                priority = #{priority},
+            </if>
+            <if test="lastEditTime != null">
+                last_edit_time = #{lastEditTime},
+            </if>
+            <if test="enableStatus != null">
+                enable_status = #{enableStatus},
+            </if>
+            <!--更改商品类别-->
+            <if test="productCategory != null and productCategory.productCategoryId != null">
+                product_category_id = #{productCategory.productCategoryId},
+            </if>
+        </set>
+        WHERE
+        product_id = #{productId}
+        AND
+        shop_id = #{shop.shopId}
+    </update>
+    <!--通过商品id查询指定商品(包括所属商店,商品类别和图片)-->
+    <select id="selectProductById" resultMap="productMap" parameterType="Integer">
+        SELECT
+        p.product_id,
+        p.product_name,
+        p.product_desc,
+        p.img_addr,
+        p.normal_price,
+        p.promotion_price,
+        p.priority,
+        p.point,
+        p.create_time,
+        p.last_edit_time,
+        p.enable_status,
+        p.product_category_id,
+        p.shop_id,
+        pm.product_img_id,
+        pm.img_addr AS detail_img,<!--起的别名-->
+        pm.img_desc,
+        pm.priority,
+        pm.create_time
+        FROM
+        tb_product p
+        LEFT JOIN
+        tb_product_img pm
+        ON p.product_id = pm.product_id
+        WHERE p.product_id = #{productId}
+        ORDER BY pm.priority DESC
+    </select>
+    <resultMap id="productMap" type="com.fun.entity.Product">
+        <id column="product_id" property="productId"></id>
+        <result column="product_name" property="productName"></result>
+        <result column="product_desc" property="productDesc"></result>
+        <result column="img_addr" property="imgAddr"></result>
+        <result column="normal_price" property="normalPrice"></result>
+        <result column="promotion_price" property="promotionPrice"></result>
+        <result column="point" property="point"></result>
+        <result column="priority" property="priority"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="last_edit_time" property="lastEditTime"></result>
+        <result column="enable_status" property="enableStatus"></result>
+        <association property="productCategory" column="product_category_id" javaType="com.fun.entity.ProductCategory">
+            <id column="product_category_id" property="productCategoryId"></id>
+            <result column="product_category_name" property="productCategoryName"></result>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.fun.entity.Shop">
+            <id column="shop_id" property="shopId"></id>
+            <result column="shop_name" property="shopName"></result>
+        </association>
+        <collection property="productImgList" column="product_id" ofType="com.fun.entity.ProductImg">
+            <id column="product_img_id" property="productImgId"></id>
+            <result property="imgAddr" column="detail_img"></result>
+            <result property="imgDesc" column="img_desc"></result>
+            <result property="priority" column="priority"></result>
+            <result property="createTime" column="create_time"></result>
+            <result property="productId" column="product_id"></result>
+        </collection>
+    </resultMap>
+
+    <!--添加商品-->
+    <insert id="insertProduct" parameterType="com.fun.entity.Product" useGeneratedKeys="true"
+            keyProperty="productId" keyColumn="product_id">
+    INSERT  INTO
+    tb_product
+    (
+    product_name,
+    product_desc,
+    img_addr,
+    normal_price,
+    promotion_price,
+    priority,
+    create_time,
+    last_edit_time,
+    enable_status,
+    point,
+    product_category_id,
+    shop_id)
+    VALUES
+    (
+    #{productName},
+    #{productDesc},
+    #{imgAddr},
+    #{normalPrice},
+    #{promotionPrice},
+    #{priority},
+    #{createTime},
+    #{lastEditTime},
+    #{enableStatus},
+    #{point},
+    #{productCategory.productCategoryId},
+    #{shop.shopId})
+   </insert>
+    <!--查询商品列表并分页，可输入的条件有：商品名（模糊），商品状态，店铺id，商品类别-->
+    <select id="selectProductList" resultMap="productMap">
+        SELECT
+        product_id,
+        product_name,
+        product_desc,
+        img_addr,
+        normal_price,
+        promotion_price,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        point,
+        product_category_id,
+        shop_id
+        FROM
+        tb_product
+        <where>
+            <if test="productCondition.shop!=null
+				 and productCondition.shop.shopId!=null">
+                and shop_id = #{productCondition.shop.shopId}
+            </if>
+            <if test="productCondition.productCategory!=null
+				 and productCondition.productCategory.productCategoryId!=null">
+                and product_category_id =
+                #{productCondition.productCategory.productCategoryId}
+            </if>
+            <!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是
+                '%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
+            <if test="productCondition.productName!=null">
+                and product_name like '%${productCondition.productName}%'
+            </if>
+            <if test="productCondition.enableStatus!=null">
+                and enable_status = #{productCondition.enableStatus}
+            </if>
+        </where>
+        ORDER BY
+        priority
+        DESC
+        LIMIT
+        #{rowIndex},#{pageSize}
+    </select>
+    <!--查询对应的商品总数-->
+    <select id="selectProductCount" resultType="java.lang.Integer">
+        SELECT
+        count(1)
+        FROM
+        tb_product
+        <where>
+            <if test="productCondition.shop != null and productCondition.shop.shopId != null">
+                and shop_id = #{productCondition.shop.shopId}
+            </if>
+            <if test="productCondition.productCategory!=null
+				 and productCondition.productCategory.productCategoryId!=null">
+                and product_category_id =
+                #{productCondition.productCategory.productCategoryId}
+            </if>
+            <if test="productCondition.productName">
+                and product_name LIKE '%${productCondition.productName}%'
+            </if>
+            <if test="productCondition.enableStatus != null">
+                and enable_status = #{productCondition.enableStatus}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

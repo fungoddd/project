@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="t1">商品添加</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="../resources/css/shop/productmanage.css">
+</head>
+<body>
+<header class="bar bar-nav">
+    <h1 class="title" id="t2">商品添加</h1>
+    <a class="button button-link button-nav pull-left back" href="javascript:history.back(-1)">
+
+        <span class="icon icon-left"></span>
+        返回
+    </a>
+</header>
+<div class="content">
+    <div class="list-block">
+        <ul>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-name"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">商品名称</div>
+                        <div class="item-input">
+                            <input type="text" id="productName" placeholder="商品名称" maxlength="20">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">商品类别</div>
+                        <div class="item-input">
+                            <select id="category">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">优先级</div>
+                        <div class="item-input">
+                            <input type="number" min="0" max="100" id="priority" placeholder="数值大优先" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">积分</div>
+                        <div class="item-input">
+                            <input type="number" min="0" max="100" id="point" placeholder="商品积分" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">原价</div>
+                        <div class="item-input">
+                            <input type="number" min="0" id="normalPrice" placeholder="请输入原价" maxlength="14">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">现价</div>
+                        <div class="item-input">
+                            <input type="number" min="0" id="promotionPrice" placeholder="请输入现价" maxlength="14">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">缩略图</div>
+                        <div class="item-input">
+                            <input type="file" id="smallImg">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner detail-img-div">
+                        <div class="item-title label">详情图片</div>
+                        <div class="item-input" id="detail-img">
+                            <input type="file" class="detail-img">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">商品描述</div>
+                        <div class="item-input">
+                            <textarea id="productDesc" placeholder="商品描述" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-email"></i>
+                    </div>
+                    <div class="item-inner">
+                        <label for="kaptcha" class="item-title label">验证码</label> <input
+                            id="kaptcha" name="kaptcha" type="text"
+                            class="form-control in" placeholder="验证码" maxlength="4"/>
+                        <div class="item-input">
+                            <img id="kaptchaImg" alt="点击更换" title="点击更换"
+                                 onclick="changeVerifyCode(this)" src="../Kaptcha"/>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="content-block">
+        <div class="row">
+            <div class="col-50">
+                <a href="/O2O/shopAdmin/productManagement"
+                   class="button button-big button-fill button-danger" id="back">返回商品管理</a>
+            </div>
+            <div class="col-50">
+                <a href="#" class="button button-big button-fill" id="submit">提交</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type='text/javascript'
+        src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='../resources/js/public.js' charset='utf-8'></script>
+<script type='text/javascript'
+        src='../resources/js/shop/productOperation.js' charset='utf-8'></script>
+</body>
+</html>

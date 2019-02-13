@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置全局属性 -->
+    <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 使用列别名替换列名 默认:true -->
+        <setting name="useColumnLabel" value="true"/>
+        <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <plugins>
+        <!--pageHelper拦截器一定要写在自定义(自定义的query四个参数,pageHelper中query是六个参数,
+        先执行下面的,否则会因参数不符合规范跳过)前面-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"></property>
+            <!--<property name="reasonable" value="true"></property>-->
+            <property name="autoRuntimeDialect" value="true"></property>
+        </plugin>
+
+        <!--配置自定义的数据源拦截器-->
+        <plugin interceptor="com.fun.split.DynamicDataSourceInterceptor"></plugin>
+    </plugins>
+
+</configuration>

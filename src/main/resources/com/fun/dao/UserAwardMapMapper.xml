@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.UserAwardMapMapper">
+    <resultMap id="userAwardResultMap" type="com.fun.entity.UserAwardMap">
+        <id property="userAwardId" column="user_award_id"></id>
+        <result column="create_time" property="createTime"></result>
+        <result column="used_status" property="usedStatus"></result>
+        <result column="point" property="point"></result>
+        <!--<result column="user_name" property="userName"></result>-->
+        <!--<result column="uam_award_name" property="awardName"></result>-->
+        <association property="user" column="user_id" javaType="com.fun.entity.PersonInfo">
+            <id column="user_id" property="userId"></id>
+            <result column="name" property="name"></result>
+        </association>
+        <association property="award" column="award_id" javaType="com.fun.entity.Award">
+            <id column="award_id" property="awardId"></id>
+            <result column="award_name" property="awardName"></result>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.fun.entity.Shop">
+            <id column="shop_id" property="shopId"></id>
+            <result column="shop_name" property="shopName"></result>
+        </association>
+        <!--操作的人-->
+        <association property="operator" column="operator_id" javaType="com.fun.entity.PersonInfo">
+            <id column="operator_id" property="userId"></id>
+            <result column="operator_name" property="name"></result>
+        </association>
+    </resultMap>
+
+    <!--根据传入查询条件获取:用户兑换奖品记录的列表-->
+    <select id="selectUserAwardList" resultMap="userAwardResultMap" parameterType="com.fun.entity.UserAwardMap">
+        SELECT
+        uam.user_award_id,
+        uam.create_time,
+        uam.used_status,
+        uam.point,
+        <!--uam.user_name,
+        uam.award_name AS uam_award_name,-->
+
+        buy.user_id,
+        buy.name,
+
+        s.shop_id,
+        s.shop_name,
+        a.award_id,
+        a.award_name,
+
+        operator.user_id AS operator_id,<!--两个user_id会重复这里起别名-->
+        operator.name AS operator_name
+        FROM
+        tb_user_award_map uam,
+        tb_person_info buy,
+        tb_shop s,
+        tb_award a,
+        tb_person_info operator
+        <where>
+            uam.user_id=buy.user_id
+            AND
+            uam.shop_id=s.shop_id
+            AND
+            uam.award_id=a.award_id
+            AND
+            uam.operator_id=operator.user_id
+            <!--通过顾客信息查询-->
+            <if test="user!=null and user.userId!=null">AND uam.user_id=#{user.userId}</if>
+            <!--通过商店信息查询-->
+            <if test="shop!=null and shop.shopId!=null">AND uam.shop_id=#{shop.shopId}</if>
+            <!--通过顾客名字模糊查询-->
+            <if test="user!=null and user.name!=null">AND buy.name LIKE CONCAT ('%',#{user.name},'%')</if>
+            <!--<if test="user!=null and user.name!=null">AND uam.user_name LIKE CONCAT ('%',#{user.name},'%')</if>-->
+            <!--奖品名模糊查询-->
+            <if test="award!=null and award.awardName!=null">
+                AND a.award_name LIKE CONCAT ('%',#{award.awardName},'%')
+            </if>
+            <!--<if test="award!=null and award.awardName!=null">
+                AND uam.award_name LIKE CONCAT ('%',#{award.awardName},'%')
+            </if>-->
+            <!--奖品可用状态查询-->
+            <if test="usedStatus!=null">AND uam.used_status=#{usedStatus}</if>
+        </where>
+        ORDER BY
+        uam.create_time DESC
+    </select>
+    <!--通过主键查询指定的奖品兑换记录-->
+    <select id="selectUserAwardById" resultMap="userAwardResultMap" parameterType="integer">
+        SELECT
+        uam.user_award_id,
+        uam.create_time,
+        uam.used_status,
+        uam.point,
+        <!--uam.user_name,
+        uam.award_name AS uam_award_name,-->
+
+        buy.user_id,
+        buy.name,
+
+        s.shop_id,
+        s.shop_name,
+        a.award_id,
+        a.award_name,
+
+        operator.user_id AS operator_id,<!--两个user_id会重复这里起别名-->
+        operator.name AS operator_name
+        FROM
+        tb_user_award_map uam,
+        tb_person_info buy,
+        tb_shop s,
+        tb_award a,
+        tb_person_info operator
+        WHERE
+        uam.user_id=buy.user_id
+        AND
+        uam.shop_id=s.shop_id
+        AND
+        uam.award_id=a.award_id
+        AND
+        uam.operator_id=operator.user_id
+        AND
+        user_award_id=#{userAwardId}
+    </select>
+    <!--新增奖品兑换信息-->
+    <insert id="insertUserAwardMap" parameterType="com.fun.entity.UserAwardMap" useGeneratedKeys="true"
+            keyProperty="user_award_id">
+        INSERT INTO
+        tb_user_award_map
+        (
+        user_id,
+        award_id,
+        shop_id,
+        operator_id,
+        create_time,
+        used_status,
+        point,
+        user_name,
+        award_name
+        )
+        VALUES
+        (
+        #{user.userId},
+        #{award.awardId},
+        #{shop.shopId},
+        #{operator.userId},
+        #{createTime},
+        #{usedStatus},
+        #{point},
+        #{user.name},
+        #{award.awardName}
+        )
+    </insert>
+    <!--更新兑换奖品信息通过主键和用户id(更新奖品领取状态)-->
+    <update id="updateUserAwardMap" parameterType="com.fun.entity.UserAwardMap" useGeneratedKeys="true"
+            keyProperty="user_award_id">
+        UPDATE
+        tb_user_award_map
+        SET
+        used_status=#{usedStatus},
+        operator_id=#{operatorId}
+        WHERE
+        user_award_id=#{userAwardId}
+        AND
+        user_id=#{user.userId}
+    </update>
+    <!--删除指定奖品兑换信息-->
+    <delete id="deleteUserAwardMap" parameterType="integer">
+        DELETE
+        tb_user_award_map
+        WHERE
+        user_award_id=#{userAwardId}
+    </delete>
+</mapper>

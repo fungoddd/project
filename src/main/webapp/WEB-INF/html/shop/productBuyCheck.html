@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>消费记录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="../resources/css/shop/productbuycheck.css">
+</head>
+<body>
+<header class="bar bar-nav">
+    <h1 class="title">顾客消费记录</h1>
+    <a class="button button-link button-nav pull-left back" href="javascript:history.back(-1)">
+        <span class="icon icon-left"></span>返回</a>
+</header>
+<div class="bar bar-header-secondary">
+    <div class="searchbar">
+        <a class="searchbar-cancel">取消</a>
+        <div class="search-input">
+            <label class="icon icon-search" for="search"></label>
+            <input type="search" id='search' placeholder='请输入商品名'/>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="content-block">
+
+        <div id="chart" style="width: 100%; height: 300px;"></div>
+        <div class="row row-productbuycheck">
+            <div class="col-20" style="text-align: center">商品名</div>
+            <div class="col-40" style="text-align: center">消费时间</div>
+            <div class="col-15" style="text-align: center">用户</div>
+            <div class="col-10" style="text-align: center">积分</div>
+            <div class="col-15" style="text-align: center">操作员</div>
+        </div>
+
+        <div class="productbuycheck-wrap">
+        </div>
+
+    </div>
+
+    <div class="content-block">
+        <div class="row" style="text-align: center">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="上一页" id="up" style="display: none">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li id="page">
+                    <!-- <button aria-label="下一页">
+                         <span aria-hidden="true">&raquo;</span>
+                     </button>-->
+                    <a href="#" aria-label="下一页" id="low" style="display: none">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <a href="/O2O/shopAdmin/shopManagement" class="button button-big button-fill button-danger">返回</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type='text/javascript' src='../resources/js/echarts.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/public.js' charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/shop/productBuyCheck.js' charset='utf-8'></script>
+</body>
+</html>

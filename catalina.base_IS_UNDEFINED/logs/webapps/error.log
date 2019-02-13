@@ -1,0 +1,16 @@
+2019-01-08 09:36:46:308 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 3060 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2019-01-08 09:36:46:408 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2019-01-08 09:36:46:408 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2019-01-08 09:36:56:503 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 10.905 seconds (JVM running for 14.383)
+2019-01-08 09:38:49:925 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 592 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2019-01-08 09:38:49:925 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2019-01-08 09:38:49:925 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2019-01-08 09:38:59:604 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 10.369 seconds (JVM running for 15.122)
+2019-01-08 09:40:31:490 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 9092 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2019-01-08 09:40:31:500 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2019-01-08 09:40:31:500 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2019-01-08 09:40:40:369 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.569 seconds (JVM running for 13.489)
+2019-01-08 09:41:05:766 [http-nio-8080-exec-5] DEBUG com.fun.split.DynamicDataSourceInterceptor - 设置方法[com.fun.dao.LocalAuthMapper.localAuthLogin] use [slave] Strategy,SqlCommandType[SELECT]...
+2019-01-08 09:41:05:766 [http-nio-8080-exec-5] DEBUG com.fun.split.DynamicDataSourceHolder - 所用数据源为:slave
+2019-01-08 09:41:07:947 [http-nio-8080-exec-1] DEBUG com.fun.split.DynamicDataSourceInterceptor - 设置方法[com.fun.dao.ShopMapper.getShopList] use [slave] Strategy,SqlCommandType[SELECT]...
+2019-01-08 09:41:07:947 [http-nio-8080-exec-1] DEBUG com.fun.split.DynamicDataSourceHolder - 所用数据源为:slave

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.ShopCategoryMapper">
+    <!--按级别查询商品类别-->
+    <select id="selectShopCategory" resultType="com.fun.entity.ShopCategory">
+        SELECT
+        shop_category_id,
+        shop_category_name,
+        shop_category_desc,
+        shop_category_img,
+        priority,
+        create_time,
+        last_edit_time,
+        parent_id
+        FROM
+        tb_shop_category
+        <where>
+            <!-- 如果查询条件为空，即表示查询顶级类别，parent_id栏位为空。-->
+            <if test="shopCategoryCondition == null">
+                AND parent_id IS NULL
+            </if>
+            <!-- 如果查询条件不为空，按类别查询(非顶级类别)，
+            则查询结果的parent_id栏位不不能为空（代表该记录有所属类别）。-->
+            <if test="shopCategoryCondition != null">
+                and parent_id IS NOT NULL
+            </if>
+            <if test="shopCategoryCondition != null and shopCategoryCondition.parentId != null">
+                and parent_id = #{shopCategoryCondition.parentId}
+            </if><!--
+            <if test="shopCategoryCondition.parent != null">
+                and parent_id = #{shopCategoryConditon.parent.shopCategoryId}
+            </if>-->
+        </where>
+        ORDER BY
+        priority
+        DESC
+    </select>
+
+</mapper>

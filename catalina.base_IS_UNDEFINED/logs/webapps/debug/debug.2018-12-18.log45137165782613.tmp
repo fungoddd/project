@@ -1,0 +1,165 @@
+2018-12-18 00:00:00:092 [schedulerFactory_Worker-1] INFO  com.fun.service.ProductSellDailyService - Quartz Running...
+2018-12-18 00:04:30:020 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 2736 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 00:04:30:023 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 00:04:30:024 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 00:04:35:536 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.121 seconds (JVM running for 9.117)
+2018-12-18 00:12:31:894 [main] INFO  com.fun.FungodApplicationTests - Starting FungodApplicationTests on DESKTOP-7KE4FP8 with PID 7776 (started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 00:12:31:895 [main] DEBUG com.fun.FungodApplicationTests - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 00:12:31:896 [main] INFO  com.fun.FungodApplicationTests - No active profile set, falling back to default profiles: default
+2018-12-18 00:12:39:639 [main] INFO  com.fun.FungodApplicationTests - Started FungodApplicationTests in 8.603 seconds (JVM running for 10.615)
+2018-12-18 00:17:35:418 [main] INFO  com.fun.FungodApplicationTests - Starting FungodApplicationTests on DESKTOP-7KE4FP8 with PID 4268 (started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 00:17:35:419 [main] DEBUG com.fun.FungodApplicationTests - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 00:17:35:421 [main] INFO  com.fun.FungodApplicationTests - No active profile set, falling back to default profiles: default
+2018-12-18 00:17:41:339 [main] INFO  com.fun.FungodApplicationTests - Started FungodApplicationTests in 6.734 seconds (JVM running for 8.491)
+2018-12-18 11:39:03:164 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 5436 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 11:39:03:171 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 11:39:03:172 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 11:39:12:253 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 10.393 seconds (JVM running for 18.226)
+2018-12-18 12:26:30:575 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 3176 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 12:26:30:578 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 12:26:30:579 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 12:26:36:161 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.018 seconds (JVM running for 8.96)
+2018-12-18 12:31:47:973 [http-nio-8080-exec-3] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:50:671 [http-nio-8080-exec-6] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:51:334 [http-nio-8080-exec-2] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:51:609 [http-nio-8080-exec-5] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:51:955 [http-nio-8080-exec-6] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:52:320 [http-nio-8080-exec-4] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:31:52:649 [http-nio-8080-exec-9] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:32:18:996 [http-nio-8080-exec-1] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 12:32:25:522 [http-nio-8080-exec-9] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 13:25:39:614 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6824 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 13:25:39:620 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 13:25:39:620 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 13:25:45:021 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.864 seconds (JVM running for 8.734)
+2018-12-18 13:26:12:747 [http-nio-8080-exec-8] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 13:26:15:524 [http-nio-8080-exec-1] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 16:13:10:876 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8124 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:13:10:882 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:13:10:883 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:13:17:138 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.746 seconds (JVM running for 9.482)
+2018-12-18 16:17:45:856 [http-nio-8080-exec-5] ERROR com.fun.util.baidu.ShortNetAddress - getshortURL error:java.net.UnknownHostException: dwz.cn
+2018-12-18 16:34:31:981 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 2228 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:34:31:985 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:34:31:986 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:34:38:189 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.7 seconds (JVM running for 9.778)
+2018-12-18 16:40:34:732 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8352 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:40:34:736 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:40:34:736 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:40:40:993 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.717 seconds (JVM running for 9.96)
+2018-12-18 16:43:08:143 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8304 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:43:08:149 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:43:08:149 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:43:17:465 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.992 seconds (JVM running for 15.581)
+2018-12-18 16:45:26:798 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 9032 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:45:26:802 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:45:26:802 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:45:32:544 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.206 seconds (JVM running for 9.359)
+2018-12-18 16:56:45:588 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 1968 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:56:45:594 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:56:45:594 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:56:50:959 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.787 seconds (JVM running for 8.499)
+2018-12-18 16:59:27:617 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6676 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 16:59:27:623 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 16:59:27:623 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 16:59:32:967 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.777 seconds (JVM running for 8.581)
+2018-12-18 16:59:58:197 [http-nio-8080-exec-7] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/0EnIu6wC","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545123598007%7D#wechat_redirect","err_msg":""}
+2018-12-18 16:59:58:210 [http-nio-8080-exec-7] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/0EnIu6wC
+2018-12-18 17:01:19:034 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 4620 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:01:19:040 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:01:19:040 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:01:24:488 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.961 seconds (JVM running for 8.736)
+2018-12-18 17:01:47:173 [http-nio-8080-exec-8] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/WnkSEz5X","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545123706971%7D#wechat_redirect","err_msg":""}
+2018-12-18 17:01:47:208 [http-nio-8080-exec-8] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/WnkSEz5X
+2018-12-18 17:03:08:443 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6932 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:03:08:450 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:03:08:450 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:03:13:960 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.019 seconds (JVM running for 9.405)
+2018-12-18 17:15:08:784 [http-nio-8080-exec-9] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/fQ5CnYih","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545124508429%7D#wechat_redirect","err_msg":""}
+2018-12-18 17:15:08:795 [http-nio-8080-exec-9] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/fQ5CnYih
+2018-12-18 17:17:46:266 [http-nio-8080-exec-5] INFO  com.fun.util.baidu.ShortNetAddress - response string: {"status":0,"tinyurl":"https://dwz.cn/4kS9cz8H","longurl":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx09656c4475dbc253\u0026redirect_uri=http://119.23.187.207/O2O/shopAdmin/addShopAuthMap\u0026response_type=code\u0026scope=snsapi_userinfo\u0026state=%7BaaashopIdaaa%3A6%2CaaacreateTimeaaa%3A1545124666064%7D#wechat_redirect","err_msg":""}
+2018-12-18 17:17:46:267 [http-nio-8080-exec-5] INFO  com.fun.util.baidu.ShortNetAddress - tinyurl: https://dwz.cn/4kS9cz8H
+2018-12-18 17:28:39:949 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 2556 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:28:39:955 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:28:39:956 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:28:49:024 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.739 seconds (JVM running for 12.722)
+2018-12-18 17:48:34:216 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 4680 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:48:34:219 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:48:34:220 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:48:40:423 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.66 seconds (JVM running for 9.388)
+2018-12-18 17:51:53:114 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 1492 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:51:53:119 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:51:53:119 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:51:59:186 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.526 seconds (JVM running for 9.529)
+2018-12-18 17:53:00:309 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 4380 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 17:53:00:313 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 17:53:00:313 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 17:53:06:783 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.916 seconds (JVM running for 10.762)
+2018-12-18 19:40:03:376 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 2384 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 19:40:03:379 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 19:40:03:380 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 19:40:09:950 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.056 seconds (JVM running for 9.912)
+2018-12-18 19:45:19:269 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 976 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 19:45:19:272 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 19:45:19:272 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 19:45:24:669 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 5.897 seconds (JVM running for 8.579)
+2018-12-18 19:58:07:294 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7548 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 19:58:07:297 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 19:58:07:297 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 19:58:13:319 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.468 seconds (JVM running for 9.397)
+2018-12-18 20:07:36:393 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 3976 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 20:07:36:400 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 20:07:36:402 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 20:07:44:537 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.012 seconds (JVM running for 12.542)
+2018-12-18 20:43:58:564 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6500 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 20:43:58:573 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 20:43:58:573 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 20:44:05:827 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.844 seconds (JVM running for 11.245)
+2018-12-18 20:51:48:814 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 2028 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 20:51:48:821 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 20:51:48:822 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 20:51:56:095 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.901 seconds (JVM running for 11.249)
+2018-12-18 20:55:27:127 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 4284 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 20:55:27:137 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 20:55:27:137 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 20:55:36:607 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 10.128 seconds (JVM running for 13.481)
+2018-12-18 20:59:48:408 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8180 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 20:59:48:417 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 20:59:48:418 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 20:59:57:274 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.493 seconds (JVM running for 12.621)
+2018-12-18 21:02:00:081 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8620 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 21:02:00:088 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 21:02:00:089 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 21:02:08:617 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.131 seconds (JVM running for 12.105)
+2018-12-18 21:07:38:964 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8596 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 21:07:38:982 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 21:07:38:985 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 21:07:48:004 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.769 seconds (JVM running for 13.596)
+2018-12-18 21:09:31:550 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 5324 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 21:09:31:555 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 21:09:31:556 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 21:09:40:096 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.199 seconds (JVM running for 12.226)
+2018-12-18 21:14:18:539 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 6048 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 21:14:18:544 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 21:14:18:545 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 21:14:27:828 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 9.897 seconds (JVM running for 13.414)
+2018-12-18 21:17:48:140 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 4548 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 21:17:48:143 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 21:17:48:144 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 21:17:54:305 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.628 seconds (JVM running for 9.364)
+2018-12-18 22:38:09:757 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8716 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 22:38:09:760 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 22:38:09:760 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 22:38:15:988 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.815 seconds (JVM running for 9.517)
+2018-12-18 22:45:19:588 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 512 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 22:45:19:595 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 22:45:19:595 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 22:45:25:974 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 6.874 seconds (JVM running for 10.431)
+2018-12-18 22:50:58:657 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 7692 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 22:50:58:660 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 22:50:58:661 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 22:51:05:431 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.194 seconds (JVM running for 11.104)
+2018-12-18 23:22:16:856 [main] INFO  com.fun.main.FungodApplication - Starting FungodApplication on DESKTOP-7KE4FP8 with PID 8452 (C:\Users\fungod\Desktop\O2O\target\classes started by fungod in C:\Users\fungod\Desktop\O2O)
+2018-12-18 23:22:16:860 [main] DEBUG com.fun.main.FungodApplication - Running with Spring Boot v1.5.18.RELEASE, Spring v4.3.21.RELEASE
+2018-12-18 23:22:16:860 [main] INFO  com.fun.main.FungodApplication - No active profile set, falling back to default profiles: default
+2018-12-18 23:22:23:419 [main] INFO  com.fun.main.FungodApplication - Started FungodApplication in 7.019 seconds (JVM running for 9.976)

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.ShopAuthMapMapper">
+    <resultMap id="shopAuthResultMap" type="com.fun.entity.ShopAuthMap">
+        <id column="shop_auth_id" property="shopAuthId"></id>
+        <result column="title" property="title"></result>
+        <result column="title_flag" property="titleFlag"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="last_edit_time" property="lastEditTime"></result>
+        <result column="enable_status" property="enableStatus"></result>
+        <result column="samname" property="name"></result>
+        <association property="employee" column="employee_id" javaType="com.fun.entity.PersonInfo">
+            <id column="user_id" property="userId"></id>
+            <result column="name" property="name"></result>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.fun.entity.Shop">
+            <id column="shop_id" property="shopId"></id>
+            <result column="shop_name" property="shopName"></result>
+        </association>
+    </resultMap>
+    <!--通过商店id查询指定商店下的授权信息-->
+    <select id="selectShopAuthMapListByShopId" resultMap="shopAuthResultMap" parameterType="integer">
+        SELECT
+        sam.shop_auth_id,
+        sam.title,
+        sam.title_flag,
+        sam.create_time,
+        sam.last_edit_time,
+        sam.enable_status,
+        sam.name AS samname,
+
+        p.user_id,
+        p.name,
+
+        s.shop_id,
+        s.shop_name
+        FROM
+        tb_shop_auth_map sam,
+        tb_person_info p,
+        tb_shop s
+        WHERE
+        sam.employee_id=p.user_id
+        AND
+        sam.shop_id=s.shop_id
+        AND
+        sam.shop_id=#{shopId}
+    </select>
+    <!--新增商店与员工授权关系-->
+    <insert id="insertShopAuthMap" parameterType="com.fun.entity.ShopAuthMap">
+        INSERT INTO
+        tb_shop_auth_map
+        (
+        employee_id,
+        shop_id,
+        title,
+        title_flag,
+        create_time,
+        last_edit_time,
+        enable_status,
+        name
+        )
+        VALUES
+        (
+        #{employee.userId},
+        #{shop.shopId},
+        #{title},
+        #{titleFlag},
+        #{createTime},
+        #{lastEditTime},
+        #{enableStatus},
+        #{employee.name}
+        )
+    </insert>
+    <!---更新商店授权信息-->
+    <update id="updateShopAuthMap" parameterType="com.fun.entity.ShopAuthMap" useGeneratedKeys="true"
+            keyProperty="shop_auth_id">
+        UPDATE
+        tb_shop_auth_map
+        <set>
+            <if test="title!=null">title=#{title},</if>
+            <if test="titleFlag!=null">title_flag=#{titleFlag},</if>
+            <if test="enableStatus!=null">enable_status=#{enableStatus}</if>
+            <if test="lastEditTime!=null">last_edit_time=#{lastEditTime}</if>
+            <if test="name!=null">name=#{name}</if>
+        </set>
+        WHERE
+        shop_auth_id=#{shopAuthId}
+    </update>
+    <!--删除对某员工的授权信息-->
+    <delete id="deleteShopAuthMap" parameterType="integer">
+        DELETE FROM
+        tb_shop_auth_map
+        WHERE
+        shop_auth_id=#{shopAuthId}
+        AND
+        shop_id=#{shopId}
+    </delete>
+    <!--通过主键查询商店对某员工的授权信息-->
+    <select id="selectShopAuthMapById" resultMap="shopAuthResultMap" parameterType="integer">
+        SELECT
+        sam.shop_auth_id,
+        sam.title,
+        sam.title_flag,
+        sam.create_time,
+        sam.last_edit_time,
+        sam.enable_status,
+        sam.name AS samname,
+
+        p.user_id,
+        p.name,
+
+        s.shop_id,
+        s.shop_name
+        FROM
+        tb_shop_auth_map sam,
+        tb_person_info p,
+        tb_shop s
+        WHERE
+        sam.employee_id=p.user_id
+        AND
+        sam.shop_id=s.shop_id
+        AND
+        sam.shop_auth_id=#{shopAuthId}
+    </select>
+</mapper>

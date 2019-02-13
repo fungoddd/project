@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fun.dao.WechatAuthMapper">
+    <resultMap id="wechatResultMap" type="com.fun.entity.WechatAuth">
+        <id column="wechat_auth_id" property="wechatAuthId"></id>
+        <result column="open_id" property="openId"></result>
+        <result column="create_time" property="createTime"></result>
+        <!--通过微信用户表的外键user_id获得用户信息表-->
+        <association property="personInfo" column="user_id" javaType="com.fun.entity.PersonInfo">
+            <id column="user_id" property="userId"></id>
+            <result column="name" property="name"></result>
+            <result column="gender" property="gender"></result>
+            <result column="email" property="email"></result>
+            <result column="phone" property="phone"></result>
+            <result column="user_type" property="userType"/>
+            <result column="profile_img" property="profileImg"></result>
+            <result column="enable_status" property="enableStatus"></result>
+            <result column="create_time" property="createTime"></result>
+            <result column="last_edit_time" property="lastEditTime"></result>
+        </association>
+    </resultMap>
+    <!--通过openId查询微信用户-->
+    <select id="selectWechatUserInfoByOpenId" resultMap="wechatResultMap" parameterType="string">
+        SELECT
+        w.wechat_auth_id,
+        w.user_id,
+        w.open_id,
+        w.create_time,
+        p.user_id,
+        p.name,
+        p.birthday,
+        p.gender,
+        p.phone,
+        p.email,
+        p.profile_img,
+        p.user_type,
+        p.create_time,
+        p.last_edit_time,
+        p.enable_status
+        FROM
+        tb_wechat_auth w
+        LEFT JOIN<!--左外连接,返回指定的左表的所有行,而不仅仅是连接列所匹配的行。-->
+        tb_person_info p
+        ON w.user_id =
+        p.user_id
+        WHERE
+        w.open_id =#{openId}
+    </select>
+    <!--添加微信用户-->
+    <insert id="insertWechatUser" parameterType="com.fun.entity.WechatAuth"
+            useGeneratedKeys="true" keyColumn="wechat_auth_id" keyProperty="wechatAuthId">
+	 INSERT INTO
+		tb_wechat_auth
+		(
+		user_id,
+		open_id,
+		create_time
+		)
+		VALUES
+		(
+		#{personInfo.userId},
+		#{openId},
+		#{createTime}
+		)
+    </insert>
+
+</mapper>
